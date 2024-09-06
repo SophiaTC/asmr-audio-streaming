@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASMR Zen - Streaming</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .player-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="player-container">
+        <h1>ASMR Zen</h1>
+        <audio id="asmrAudio" controls>
+            <!-- Replace this with the correct path to your audio file -->
+            <source src="https://SophiaTC.github.io/asmr-audio-streaming/audio/asmr_clip_1.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <p>Enjoy a calming ASMR experience.</p>
+    </div>
+
+    <script>
+        const audio = document.getElementById('asmrAudio');
+        audio.addEventListener('play', () => {
+            console.log('Audio is playing...');
+        });
+    </script>
+</body>
+</html>
