@@ -1,44 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASMR Zen - Streaming</title>
-    <style>
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-        }
-        .player-container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <div class="player-container">
-        <h1>ASMR Zen</h1>
-        <audio id="asmrAudio" controls>
-            <source src="https://https://SophiaTC.github.io/asmr-audio-streaming/audio/asmr_clip_1.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <p>Enjoy a calming ASMR experience.</p>
-    </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0" />
+        <title>ASMR Zen - Audio Library</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+                margin: 0;
+                padding: 20px;
+            }
+            h1 {
+                text-align: center;
+                color: #333;
+            }
+            h2 {
+                color: #444;
+            }
+            .category {
+                margin-bottom: 40px;
+            }
+            .track {
+                margin-bottom: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>ASMR Zen - Relaxing Audio Library</h1>
 
-    <script>
-        // You can interact with the Telegram Web App API if needed
-        const audio = document.getElementById('asmrAudio');
-        audio.addEventListener('play', () => {
-            console.log('Audio is playing...');
-        });
-    </script>
-</body>
+        <!-- Nature Sounds Category -->
+        <div class="category">
+            <h2>Nature Sounds</h2>
+
+            <div class="track">
+                <p>Rainfall</p>
+                <audio controls>
+                    <source
+                        src="https://SophiaTC.github.io/asmr-audio-streaming/audio/Nature Sounds/01 Rain_mountain-thunderstorm.mp3"
+                        type="audio/mpeg" />
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <div class="track">
+                <p>Ocean Waves</p>
+                <audio controls>
+                    <source
+                        src="https://SophiaTC.github.io/asmr-audio-streaming/audio/Nature Sounds/02 waves-on-sand-and-pebbles-beach.wav"
+                        type="audio/mpeg" />
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+
+        <!-- Sleep Sounds Category -->
+        <div class="category">
+            <h2>Sleep Sounds</h2>
+
+            <div class="track">
+                <p>Soft Piano</p>
+                <audio controls>
+                    <source
+                        src="https://SophiaTC.github.io/asmr-audio-streaming/audio/Sleep-Inducing Sounds/06 piano-for-meditation.mp3"
+                        type="audio/mpeg" />
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+
+        <!-- ASMR Triggers Category -->
+        <div class="category">
+            <h2>ASMR Triggers</h2>
+
+            <div class="track">
+                <p>Whispering</p>
+                <audio controls>
+                    <source
+                        src="https://SophiaTC.github.io/asmr-audio-streaming/audio/ASMR Triggers/04 asmr-test-eating-chips-clock-ticking-and-soft-talking-and-whispering.mp3"
+                        type="audio/mpeg" />
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+
+        <!-- White Noise Category -->
+        <div class="category">
+            <h2>White Noise</h2>
+
+            <div class="track">
+                <p>
+                    Radio White Noise/p>
+                    <audio controls>
+                        <source
+                            src="https://SophiaTC.github.io/asmr-audio-streaming/audio/White Noise/03 real-radio-white-noise.wav"
+                            type="audio/mpeg" />
+                        Your browser does not support the audio element.
+                    </audio>
+                </p>
+            </div>
+        </div>
+
+        <!-- Focus Sounds Category -->
+        <div class="category">
+            <h2>Focus Sounds</h2>
+
+            <div class="track">
+                <p>
+                    Forest Morning/p>
+                    <audio controls>
+                        <source
+                            src="https://SophiaTC.github.io/asmr-audio-streaming/audio/Focus Sounds/07 forest-with-soft-rain-morning-ambience.mp3"
+                            type="audio/mpeg" />
+                        Your browser does not support the audio element.
+                    </audio>
+                </p>
+            </div>
+        </div>
+
+        <!-- Ambient Sounds Category -->
+        <div class="category">
+            <h2>Ambient Sounds</h2>
+
+            <div class="track">
+                <p>
+                    Summer Garden/p>
+                    <audio controls>
+                        <source
+                            src="https://SophiaTC.github.io/asmr-audio-streaming/audio/Ambient Sounds/05 lazysummergardensuburb.mp3"
+                            type="audio/mpeg" />
+                        Your browser does not support the audio element.
+                    </audio>
+                </p>
+            </div>
+        </div>
+
+        <!-- Meditative Sounds Category -->
+        <div class="category">
+            <h2>Meditative Sounds</h2>
+
+            <div class="track">
+                <p>
+                    Meditation/p>
+                    <audio controls>
+                        <source
+                            src="https://SophiaTC.github.io/asmr-audio-streaming/audio/Meditative Sounds/08 meditation-in-g.mp3"
+                            type="audio/mpeg" />
+                        Your browser does not support the audio element.
+                    </audio>
+                </p>
+            </div>
+        </div>
+    </body>
 </html>
