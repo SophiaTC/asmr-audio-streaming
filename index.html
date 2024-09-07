@@ -1,188 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0" />
-        <title>ASMR Zen - Audio Library</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f0f0f0;
-                margin: 0;
-                padding: 20px;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASMR Zen Player</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        /* Styling for buttons and inputs */
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        input[type="range"] {
+            width: 80%;
+            margin: 10px 0;
+        }
+
+        /* Responsive styling for smaller screens */
+        @media (max-width: 768px) {
+            input[type="range"] {
+                width: 100%;
             }
-            h1 {
-                text-align: center;
-                color: #333;
-            }
-            h2 {
-                color: #444;
-            }
-            .category {
-                margin-bottom: 40px;
-            }
-            .track {
-                margin-bottom: 15px;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>ASMR Zen - Relaxing Audio Library</h1>
+        }
+    </style>
+</head>
+<body>
 
-        <!-- Nature Sounds Category -->
-        <div class="category">
-            <h2>Nature Sounds</h2>
+    <h1>ASMR Zen Player</h1>
 
-            <div class="track">
-                <p>Rainfall</p>
-                <audio controls>
-                    <source
-                        src="https://SophiaTC.github.io/asmr-audio-streaming/audio/Nature Sounds/01 Rain_mountain-thunderstorm.mp3"
-                        type="audio/mpeg" />
-                    Your browser does not support the audio element.
-                </audio>
-            </div>
+    <!-- Audio Player -->
+    <audio id="audioPlayer" controls>
+        <source id="audioSource" src="" type="audio/mpeg"> <!-- Will be updated by JavaScript -->
+        Your browser does not support the audio element.
+    </audio>
 
-            <div class="track">
-                <p>Ocean Waves</p>
-                <audio controls>
-                    <source
-                        src="https://SophiaTC.github.io/asmr-audio-streaming/audio/Nature Sounds/02 waves-on-sand-and-pebbles-beach.wav"
-                        type="audio/mpeg" />
-                    Your browser does not support the audio element.
-                </audio>
-            </div>
-        </div>
-
-        <!-- Sleep Sounds Category -->
-        <div class="category">
-            <h2>Sleep Sounds</h2>
-
-            <div class="track">
-                <p>Soft Piano</p>
-                <audio controls>
-                    <source
-                        src="https://SophiaTC.github.io/asmr-audio-streaming/audio/Sleep-Inducing Sounds/06 piano-for-meditation.mp3"
-                        type="audio/mpeg" />
-                    Your browser does not support the audio element.
-                </audio>
-            </div>
-        </div>
-
-        <!-- ASMR Triggers Category -->
-        <div class="category">
-            <h2>ASMR Triggers</h2>
-
-            <div class="track">
-                <p>Whispering</p>
-                <audio controls>
-                    <source
-                        src="https://SophiaTC.github.io/asmr-audio-streaming/audio/ASMR Triggers/04 asmr-test-eating-chips-clock-ticking-and-soft-talking-and-whispering.mp3"
-                        type="audio/mpeg" />
-                    Your browser does not support the audio element.
-                </audio>
-            </div>
-        </div>
-
-        <!-- White Noise Category -->
-        <div class="category">
-            <h2>White Noise</h2>
-
-            <div class="track">
-                <p>
-                    Radio White Noise/p>
-                    <audio controls>
-                        <source
-                            src="https://SophiaTC.github.io/asmr-audio-streaming/audio/White Noise/03 real-radio-white-noise.wav"
-                            type="audio/mpeg" />
-                        Your browser does not support the audio element.
-                    </audio>
-                </p>
-            </div>
-        </div>
-
-        <!-- Focus Sounds Category -->
-        <div class="category">
-            <h2>Focus Sounds</h2>
-
-            <div class="track">
-                <p>
-                    Forest Morning/p>
-                    <audio controls>
-                        <source
-                            src="https://SophiaTC.github.io/asmr-audio-streaming/audio/Focus Sounds/07 forest-with-soft-rain-morning-ambience.mp3"
-                            type="audio/mpeg" />
-                        Your browser does not support the audio element.
-                    </audio>
-                </p>
-            </div>
-        </div>
-
-        <!-- Ambient Sounds Category -->
-        <div class="category">
-            <h2>Ambient Sounds</h2>
-
-            <div class="track">
-                <p>
-                    Summer Garden/p>
-                    <audio controls>
-                        <source
-                            src="https://SophiaTC.github.io/asmr-audio-streaming/audio/Ambient Sounds/05 lazysummergardensuburb.mp3"
-                            type="audio/mpeg" />
-                        Your browser does not support the audio element.
-                    </audio>
-                </p>
-            </div>
-        </div>
-
-        <!-- Meditative Sounds Category -->
-        <div class="category">
-            <h2>Meditative Sounds</h2>
-
-            <div class="track">
-                <p>
-                    Meditation/p>
-                    <audio controls>
-                        <source
-                            src="https://SophiaTC.github.io/asmr-audio-streaming/audio/Meditative Sounds/08 meditation-in-g.mp3"
-                            type="audio/mpeg" />
-                        Your browser does not support the audio element.
-                    </audio>
-                </p>
-            </div>
-        </div>
-
+    <!-- Loop Button -->
     <br>
-        
-    <!-- Loop button -->
     <button id="loopBtn">Loop Off</button>
+
+    <!-- Volume Control Slider -->
+    <br>
+    <label for="volumeControl">Volume:</label>
+    <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1">
 
     <script>
         const audioPlayer = document.getElementById('audioPlayer');
+        const audioSource = document.getElementById('audioSource');
         const loopBtn = document.getElementById('loopBtn');
+        const volumeControl = document.getElementById('volumeControl');
 
-        // Toggle loop on button click
+        // Function to get the track URL from the query parameter
+        function getTrackUrlFromQuery() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('track_url');
+        }
+
+        // Function to update the audio player with the track URL
+        function updateTrack(url) {
+            if (url) {
+                audioSource.src = url;  // Set the audio source to the passed track URL
+                audioPlayer.load();      // Load the new track
+                audioPlayer.play();      // Automatically play the new track
+            } else {
+                alert('No track URL provided.');
+            }
+        }
+
+        // Get the track URL from the query parameters and update the player
+        const trackUrlFromBot = getTrackUrlFromQuery();
+        updateTrack(trackUrlFromBot);  // Automatically play the track sent by the bot
+
+        // Loop button toggle
         loopBtn.addEventListener('click', () => {
             audioPlayer.loop = !audioPlayer.loop;
             loopBtn.textContent = audioPlayer.loop ? 'Loop On' : 'Loop Off';
         });
+
+        // Volume control slider
+        volumeControl.addEventListener('input', () => {
+            audioPlayer.volume = volumeControl.value;
+        });
     </script>
 
-<!-- Add this under the audio player -->
-<label for="volumeControl">Volume:</label>
-<input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1">
-
-<script>
-    const volumeControl = document.getElementById('volumeControl');
-
-    // Adjust volume based on slider input
-    volumeControl.addEventListener('input', () => {
-        audioPlayer.volume = volumeControl.value;
-    });
-</script>
-
-        
-    </body>
+</body>
 </html>
