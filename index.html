@@ -153,5 +153,22 @@
                 </p>
             </div>
         </div>
+
+    <br>
+        
+    <!-- Loop button -->
+    <button id="loopBtn">Loop Off</button>
+
+    <script>
+        const audioPlayer = document.getElementById('audioPlayer');
+        const loopBtn = document.getElementById('loopBtn');
+
+        // Toggle loop on button click
+        loopBtn.addEventListener('click', () => {
+            audioPlayer.loop = !audioPlayer.loop;
+            loopBtn.textContent = audioPlayer.loop ? 'Loop On' : 'Loop Off';
+        });
+    </script>
+        
     </body>
 </html>
