@@ -3,11 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASMR Zen Player</title>
+    <title>ASMR Zen - Streaming</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .player-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+    </style>
 </head>
-<body style="font-family: Arial, sans-serif; margin: 20px; text-align: center;">
-
-    <h1 style="color: #333;">ASMR Zen Player</h1>
+<body>
+    <div class="player-container">
+        <h1>ASMR Zen</h1>
 
     <!-- Audio Player -->
     <audio id="audioPlayer" controls style="margin-top: 20px; width: 100%;">
