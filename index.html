@@ -4,64 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASMR Zen Player</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            text-align: center;
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        /* Styling for buttons and inputs */
-        button {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 10px;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        input[type="range"] {
-            width: 80%;
-            margin: 10px 0;
-        }
-
-        /* Responsive styling for smaller screens */
-        @media (max-width: 768px) {
-            input[type="range"] {
-                width: 100%;
-            }
-        }
-    </style>
 </head>
-<body>
+<body style="font-family: Arial, sans-serif; margin: 20px; text-align: center;">
 
-    <h1>ASMR Zen Player</h1>
+    <h1 style="color: #333;">ASMR Zen Player</h1>
 
     <!-- Audio Player -->
-    <audio id="audioPlayer" controls>
-        <source id="audioSource" src="" type="audio/mpeg"> <!-- Will be updated by JavaScript -->
+    <audio id="audioPlayer" controls style="margin-top: 20px; width: 100%;">
+        <source id="audioSource" src="" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
     <!-- Loop Button -->
     <br>
-    <button id="loopBtn">Loop Off</button>
+    <button id="loopBtn" style="background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; margin: 10px;">
+        Loop Off
+    </button>
 
     <!-- Volume Control Slider -->
     <br>
-    <label for="volumeControl">Volume:</label>
-    <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1">
+    <label for="volumeControl" style="font-size: 18px;">Volume:</label>
+    <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1" style="width: 80%; margin: 10px 0;">
 
     <script>
         const audioPlayer = document.getElementById('audioPlayer');
