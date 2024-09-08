@@ -3,83 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASMR Zen - Streaming</title>
-    <style>
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-        }
-        .player-container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-    </style>
+    <title>ASMR Zen Soundscapes</title>
 </head>
-<body>
-    <div class="player-container">
-        <h1>ASMR Zen</h1>
+<body style="font-family: Arial, sans-serif; margin: 20px; text-align: center;">
 
-    <!-- Audio Player -->
-    <audio id="audioPlayer" controls style="margin-top: 20px; width: 100%;">
-        <source id="audioSource" src="" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+    <h1 style="color: #333;">Create Your Soundscape</h1>
 
-    <!-- Loop Button -->
-    <br>
-    <button id="loopBtn" style="background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; margin: 10px;">
-        Loop Off
-    </button>
+    <!-- Audio Players for Mixing Tracks -->
+    <div id="soundscape" style="margin-top: 20px;">
 
-    <!-- Volume Control Slider -->
-    <br>
-    <label for="volumeControl" style="font-size: 18px;">Volume:</label>
-    <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1" style="width: 80%; margin: 10px 0;">
+        <!-- Track 1: Nature Sounds -->
+        <h3>Nature Sound</h3>
+        <audio id="audioNature" controls style="width: 100%;">
+            <source id="natureSource" src="" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <label for="natureVolume">Nature Volume:</label>
+        <input type="range" id="natureVolume" min="0" max="1" step="0.1" value="1" style="width: 80%; margin: 10px 0;">
+
+        <!-- Track 2: ASMR/Soft Music -->
+        <h3>ASMR/Soft Music</h3>
+        <audio id="audioASMR" controls style="width: 100%;">
+            <source id="asmrSource" src="" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <label for="asmrVolume">ASMR/Music Volume:</label>
+        <input type="range" id="asmrVolume" min="0" max="1" step="0.1" value="1" style="width: 80%; margin: 10px 0;">
+    </div>
 
     <script>
-        const audioPlayer = document.getElementById('audioPlayer');
-        const audioSource = document.getElementById('audioSource');
-        const loopBtn = document.getElementById('loopBtn');
-        const volumeControl = document.getElementById('volumeControl');
+        // Get the audio players and volume controls
+        const audioNature = document.getElementById('audioNature');
+        const audioASMR = document.getElementById('audioASMR');
+        const natureSource = document.getElementById('natureSource');
+        const asmrSource = document.getElementById('asmrSource');
+        const natureVolumeControl = document.getElementById('natureVolume');
+        const asmrVolumeControl = document.getElementById('asmrVolume');
 
-        // Function to get the track URL from the query parameter
-        function getTrackUrlFromQuery() {
+        // Function to get track URLs from query parameters
+        function getTrackUrlFromQuery(paramName) {
             const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get('track_url');
+            return urlParams.get(paramName);
         }
 
-        // Function to update the audio player with the track URL
-        function updateTrack(url) {
+        // Function to update and play the selected track
+        function updateTrack(audioElement, sourceElement, url) {
             if (url) {
-                audioSource.src = url;  // Set the audio source to the passed track URL
-                audioPlayer.load();      // Load the new track
-                audioPlayer.play();      // Automatically play the new track
-            } else {
-                alert('No track URL provided.');
+                sourceElement.src = url;
+                audioElement.load();
+                audioElement.play();
             }
         }
 
-        // Get the track URL from the query parameters and update the player
-        const trackUrlFromBot = getTrackUrlFromQuery();
-        updateTrack(trackUrlFromBot);  // Automatically play the track sent by the bot
+        // Get track URLs from query parameters
+        const natureTrackUrl = getTrackUrlFromQuery('nature_track');
+        const asmrTrackUrl = getTrackUrlFromQuery('asmr_track');
 
-        // Loop button toggle
-        loopBtn.addEventListener('click', () => {
-            audioPlayer.loop = !audioPlayer.loop;
-            loopBtn.textContent = audioPlayer.loop ? 'Loop On' : 'Loop Off';
+        // Update and play the nature and ASMR tracks
+        updateTrack(audioNature, natureSource, natureTrackUrl);
+        updateTrack(audioASMR, asmrSource, asmrTrackUrl);
+
+        // Handle independent volume controls
+        natureVolumeControl.addEventListener('input', () => {
+            audioNature.volume = natureVolumeControl.value;
         });
 
-        // Volume control slider
-        volumeControl.addEventListener('input', () => {
-            audioPlayer.volume = volumeControl.value;
+        asmrVolumeControl.addEventListener('input', () => {
+            audioASMR.volume = asmrVolumeControl.value;
         });
     </script>
 
